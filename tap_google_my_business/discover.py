@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import sys
 
 import singer
 from singer import metadata
