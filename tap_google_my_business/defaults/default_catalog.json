@@ -1,8 +1,8 @@
 {
     "streams": [
         {
-            "tap_stream_id": "google_my_business",
-            "stream": "locations",
+            "tap_stream_id": "google_my_business-locations",
+            "stream": "google_my_business-locations",
             "schema": {
                 "type": [
                     "null",
