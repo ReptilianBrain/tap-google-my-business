@@ -12,7 +12,9 @@ def custom_stream(state, stream, config):
     records_streamed = 0
     now = datetime.now(timezone.utc).isoformat()
 
-    gmb = GoogleMyBusiness(config['accounts'])
+    gmb = GoogleMyBusiness(config['accounts'],
+                           config['credentials_file_location']
+                           )
 
     for locations in gmb.get_locations():
         singer.write_records(table_name, locations)

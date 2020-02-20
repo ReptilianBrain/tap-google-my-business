@@ -1,4 +1,6 @@
 {
   "accounts": "",
-  "start_date": "2020-01-01T00:00:00Z"
+  "start_date": "2020-01-01T00:00:00Z",
+  "key_file_location": "path/client_secrets.json",
+  "crendentials_location": "path/",
 }

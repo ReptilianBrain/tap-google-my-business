@@ -1,4 +1,3 @@
-import logging
 import singer
 
 from googleapiclient import sample_tools
@@ -13,9 +12,13 @@ LOGGER = singer.get_logger()
 class GoogleMyBusiness:
     arg = []
 
-    def __init__(self, account):
+    def __init__(self, account, credentials_file_location):
         self.service, flag = sample_tools.init(
-            self.arg, "mybusiness", "v4", __doc__, __file__,
+            self.arg,
+            name=f"{credentials_file_location}mybusiness",
+            version="v4",
+            doc=__doc__,
+            filename=f"{credentials_file_location}/client_secrets.json",
             scope="https://www.googleapis.com/auth/business.manage",
             discovery_filename=DISCOVERY_DOC
         )

@@ -1,12 +1,13 @@
-import json
 from pathlib import Path
 import sys
 
 import singer
 from singer import metadata
 
+from tap_google_my_business import load_json
 
 LOGGER = singer.get_logger()
+
 
 def discover_streams(config):
     default_catalog = Path(__file__).parent.joinpath('defaults', 'default_catalog.json')
@@ -40,8 +41,3 @@ def load_metadata(table_spec, schema):
             mdata = metadata.write(mdata, ('properties', field_name), 'inclusion', 'available')
 
     return metadata.to_list(mdata)
-
-
-def load_json(path):
-    with open(path) as f:
-        return json.load(f)
