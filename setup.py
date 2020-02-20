@@ -26,11 +26,6 @@ setup(name='tap-google-my-business',
           tap-google-my-business=tap_google_my_business:main
       ''',
       packages=['tap_google_my_business'],
-      package_data={
-          'tap_google_my_business/defaults': [
-              "default_catalog.json",
-          ],
-      },
-      include_package_data=True,
-
+      package_dir={'tap_google_my_business': 'tap_google_my_business'},
+      package_data={'tap_google_my_business': ["defaults/default_catalog.json"]}
       )
