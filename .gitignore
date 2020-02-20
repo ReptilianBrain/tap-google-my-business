@@ -131,6 +131,7 @@ dmypy.json
 
 # Custom
 *.json
+!/tap_google_my_business/defaults/default_catalog.json
 !catalog-sample.json
 !gmb_discovery.json
 my_business.dat
