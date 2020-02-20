@@ -23,7 +23,7 @@ setup(name='tap-google-my-business',
       ],
       entry_points='''
           [console_scripts]
-          tap-google-my-business=tap_gmb:main
+          tap-google-my-business=tap_google_my_business:main
       ''',
       packages=['tap_google_my_business'],
       )
