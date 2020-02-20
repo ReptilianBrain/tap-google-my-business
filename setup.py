@@ -25,5 +25,5 @@ setup(name='tap-google-my-business',
           [console_scripts]
           tap-google-my-business=tap_google_my_business:main
       ''',
-      packages=['tap_google_my_business'],
+      packages=['tap_google_my_business', 'tap_google_my_business.defaults'],
       )
