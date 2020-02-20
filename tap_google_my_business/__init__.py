@@ -60,7 +60,7 @@ def process_args():
         try:
             args.config['client_secrets'] = load_json(args.config['key_file_location'])
         except ValueError:
-            LOGGER.critical(f"tap-google-my-business: The JSON definition in [{args.config['credentials_file_location']}] has errors")
+            LOGGER.critical(f"tap-google-my-business: The JSON definition in [{args.config['credentials_location']}] has errors")
             sys.exit(1)
     else:
         LOGGER.critical(f"tap-google-my-business: '{args.config['key_file_location']}' file not found")

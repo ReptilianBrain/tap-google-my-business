@@ -13,7 +13,8 @@ def custom_stream(state, stream, config):
     now = datetime.now(timezone.utc).isoformat()
 
     gmb = GoogleMyBusiness(config['accounts'],
-                           config['credentials_file_location']
+                           config['key_file_location'],
+                           config['credentials_location']
                            )
 
     for locations in gmb.get_locations():

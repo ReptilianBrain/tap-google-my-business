@@ -40,6 +40,7 @@ def load_metadata(table_spec, schema):
 
     return metadata.to_list(mdata)
 
+
 def load_json(path):
     with open(path) as f:
         return json.load(f)
