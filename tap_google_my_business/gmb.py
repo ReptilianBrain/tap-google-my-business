@@ -20,7 +20,7 @@ class GoogleMyBusiness:
             doc=__doc__,
             filename=key_file_location,
             scope="https://www.googleapis.com/auth/business.manage",
-            discovery_filename=DISCOVERY_DOC
+            discovery_filename=f"{credentials_location}gmb_discovery.json"
         )
         self.account = account
 

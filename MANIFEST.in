@@ -1,1 +1,2 @@
 include tap_google_my_business/defaults/default_catalog.json
+include tap_google_my_business/gmb_discovery.json
