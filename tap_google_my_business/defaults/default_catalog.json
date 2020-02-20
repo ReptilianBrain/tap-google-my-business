@@ -1,8 +1,8 @@
 {
     "streams": [
         {
-            "tap_stream_id": "gmb-gmb_test",
-            "stream": "gmb-gmb_test",
+            "tap_stream_id": "google_my_business",
+            "stream": "locations",
             "schema": {
                 "type": [
                     "null",
