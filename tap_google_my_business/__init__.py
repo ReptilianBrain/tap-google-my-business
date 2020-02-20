@@ -66,8 +66,8 @@ def process_args():
         LOGGER.critical(f"tap-google-my-business: '{args.config['key_file_location']}' file not found")
         sys.exit(1)
 
-    if not Path(args.config['credentials_file_location']):
-        LOGGER.critical(f"tap-google-my-business: '{args.config['credentials_file_location']}' not found")
+    if not Path(args.config['credentials_location']):
+        LOGGER.critical(f"tap-google-my-business: '{args.config['credentials_location']}' not found")
         sys.exit(1)
 
     return args
