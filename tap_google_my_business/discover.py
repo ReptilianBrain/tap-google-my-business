@@ -1,24 +1,30 @@
+import json
+from pathlib import Path
+
+import singer
 from singer import metadata
 
 
-def discover_streams(config):
-    streams = [
-        {
-            "tap_stream_id": "users",
-            "stream": "users",
-            "schema": {
-                "type": ["null", "object"],
-                "additionalProperties": False,
-                "properties": {
-                    "ip": {"type": "string"},
-                    "timestamp": {"type": "string", "format": "date-time"},
-                    "id": {"type": "integer"}
-                }
-            }
-        }
-    ]
+LOGGER = singer.get_logger()
 
-    return streams
+def discover_streams(config):
+    default_catalog = Path(__file__).parent.joinpath('defaults', 'default_catalog.json')
+
+    catalog_def_file = config.get('streams', default_catalog)
+
+    if Path(catalog_def_file).is_file():
+        try:
+            catalog_definition = load_json(catalog_def_file)
+        except ValueError:
+            LOGGER.critical(
+                f"tap-google-analytics: The JSON definition in '{catalog_def_file}' has errors"
+            )
+            sys.exit(1)
+    else:
+        LOGGER.critical(f"tap-google-analytics: '{catalog_def_file}' file not found")
+        sys.exit(1)
+
+    return catalog_definition['streams']
 
 
 def load_metadata(table_spec, schema):
@@ -33,3 +39,8 @@ def load_metadata(table_spec, schema):
             mdata = metadata.write(mdata, ('properties', field_name), 'inclusion', 'available')
 
     return metadata.to_list(mdata)
+
+
+def load_json(path):
+    with open(path) as f:
+        return json.load(f)
