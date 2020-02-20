@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Custom
+*.json
+!catalog-sample.json
+!gmb_discovery.json
+my_business.dat
+/.idea/
