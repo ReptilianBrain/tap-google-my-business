@@ -18,11 +18,11 @@ def custom_stream(state, stream, config):
                            config['credentials_location']
                            )
     default_location = {x: None for x in stream.schema.properties.keys()}
-    safe_columns = ['locationName', 'name']
+    # safe_columns = ['locationName', 'name', 'latlng']
     for locations in gmb.get_locations():
         # TODO: Filter columns based on stream schema properties
         safe_locations = [{**default_location, **loc} for loc in locations]
-        safe_locations = [{k: loc.get(k) for k in loc if k in safe_columns} for loc in safe_locations]
+        # safe_locations = [{k: loc.get(k) for k in loc if k in safe_columns} for loc in safe_locations]
         singer.write_records(table_name, safe_locations)
         records_streamed += len(locations)
 
