@@ -12,10 +12,12 @@
                 "properties": {
                     "name": {
                         "description": "Google identifier for this location in the form:\n  `accounts/{account_id}/locations/{location_id}`\n\nIn the context of matches, this field will not be populated.",
+                        "inclusion": "automatic",
                         "type": ["null", "string"]
                     },
                     "locationName": {
                         "description": "Location name should reflect your business's real-world name, as used\nconsistently on your storefront, website, and stationery, and as known to\ncustomers.\nAny additional information, when relevant, can be included in other\nfields of the resource (for example, `Address`, `Categories`).\nDon't add unnecessary information to your name (for example, prefer\n\"Google\" over \"Google Inc. - Mountain View Corporate Headquarters\"). Don't\ninclude marketing taglines, store codes, special characters, hours or\nclosed/open status, phone numbers, website URLs, service/product\ninformation, location/address or directions, or containment information\n(for example, \"Chase ATM in Duane Reade\").",
+                        "inclusion": "automatic",
                         "type": ["null", "string"]
                     }
                 }
