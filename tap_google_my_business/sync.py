@@ -16,9 +16,11 @@ def custom_stream(state, stream, config):
                            config['key_file_location'],
                            config['credentials_location']
                            )
-
+    default_location = {x: None for x in stream.schema.properties.keys()}
     for locations in gmb.get_locations():
-        singer.write_records(table_name, locations)
+        # TODO: Filter columns based on stream schema properties
+        safe_locations = [{**default_location, **loc} for loc in locations]
+        singer.write_records(table_name, safe_locations)
         records_streamed += len(locations)
 
         state = singer.write_bookmark(state, table_name, 'updated_at', now)
