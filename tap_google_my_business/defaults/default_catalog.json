@@ -39,17 +39,23 @@
                     },
                     "address": {
                         "description": "A precise, accurate address to describe your business location.\nPO boxes or mailboxes located at remote locations are not acceptable.\nAt this time, you can specify a maximum of five `address_lines` values in\nthe address.",
-                        "$ref": "PostalAddress"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "primaryCategory": {
                         "description": "Category that best describes the core business this location engages in.",
-                        "$ref": "Category"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "additionalCategories": {
                         "description": "Additional categories to describe your business.\nCategories help your customers find accurate, specific results for services\nthey're interested in. To keep your business information accurate\nand live, make sure that you use as few categories as possible to describe\nyour overall core business.\nChoose categories that are as specific as possible, but representative of\nyour main business.",
                         "type": "array",
                         "items": {
-                            "$ref": "Category"
+                            "type": "string"
                         }
                     },
                     "websiteUrl": {
@@ -58,19 +64,31 @@
                     },
                     "regularHours": {
                         "description": "Operating hours for the business.",
-                        "$ref": "BusinessHours"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "specialHours": {
                         "description": "Special hours for the business. This typically includes holiday hours,\nand other times outside of regular operating hours.\nThese override regular business hours.",
-                        "$ref": "SpecialHours"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "serviceArea": {
                         "description": "Service area businesses provide their service at the customer's location.\nIf this business is a service area business, this field describes the\narea(s) serviced by the business.",
-                        "$ref": "ServiceAreaBusiness"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "locationKey": {
                         "description": "A collection of keys that link this business to\nother Google properties, such as a Google+ page and Google Maps Places.",
-                        "$ref": "LocationKey"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "labels": {
                         "description": "A collection of free-form strings to allow you to tag your business. These\nlabels are NOT user facing; only you can see them.\nLimited to 255 characters (per label).",
@@ -81,45 +99,66 @@
                     },
                     "adWordsLocationExtensions": {
                         "description": "Additional information that is surfaced in AdWords.",
-                        "$ref": "AdWordsLocationExtensions"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "latlng": {
                         "description": "User-provided latitude and longitude.\nWhen creating a location, this field is ignored if the provided\naddress geocodes successfully.\nThis field is only returned on get requests if the user-provided\n`latlng`\nvalue was accepted during create, or the `latlng` value was updated through\nthe Google My Business website.\nThis field cannot be updated.",
-                        "$ref": "LatLng"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "openInfo": {
                         "description": "A flag that indicates whether the location is currently open for\nbusiness.",
-                        "$ref": "OpenInfo"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "locationState": {
                         "description": "Output only. A set of booleans that reflects the state of a location.",
-                        "$ref": "LocationState"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "attributes": {
                         "description": "Attributes for this location.",
                         "type": "array",
                         "items": {
-                            "$ref": "Attribute"
+                            "type": "string"
                         }
                     },
                     "metadata": {
                         "description": "Output Only. Additional non-user-editable information.",
-                        "$ref": "Metadata"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "priceLists": {
                         "description": "Price list information for this location.",
                         "type": "array",
                         "items": {
-                            "$ref": "PriceList"
+                            "type": "string"
                         }
                     },
                     "profile": {
                         "description": "Describes your business in your own voice and shares with users the unique\nstory of your business and offerings.",
-                        "$ref": "Profile"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationshipData": {
                         "description": "All locations and chain related to this one.",
-                        "$ref": "RelationshipData"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }
             },
